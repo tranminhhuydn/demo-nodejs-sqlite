@@ -7,6 +7,7 @@ var favicon = require('serve-favicon');
 
 var sequelize = exports.sequelize = require('./conn.js');
 var Result = require('./model/result');
+
 var Employee = require('./model/employees.js');
 
 var users = require('./routes/users');
@@ -22,15 +23,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
-app.get('/employees', function(req, res){
-  Employee.findAll().then(function(result){
-    //res.json(result);
-    res.json(Result.createResult(true,result))
-  });
-});
+
 
 
 //app.use(Employee);
+app.use('/employees', Employee);
 app.use('/users', users);
 
 
