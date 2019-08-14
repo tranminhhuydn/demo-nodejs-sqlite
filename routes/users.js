@@ -4,7 +4,7 @@ var router = express.Router();
 var result = require('../model/result');
 
 
-var sequelize = exports.sequelize = require('../conn.js');
+
 var Employee = require('../model/employees.js');
 
 
