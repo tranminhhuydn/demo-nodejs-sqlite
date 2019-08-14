@@ -22,23 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
 
-
-
-
-
-
+app.use(Employee);
 app.use('/users', users);
 
-/* list users */
-app.get('/', function(req, res) {
-    console.log('list index');
-    console.log('Employee',Employee);
-	  Employee.findAll().then(function(_employee){
-	  	console.log('Employee',_employee);
-	    //res.json(result.createResult(true, _employee));
-	  });
-	
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

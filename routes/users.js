@@ -3,7 +3,7 @@ var router = express.Router();
 //var userDAO = require('../dao/userDAO');
 var Result = require('../model/result');
 //var Employee = require('../model/employees.js');
-var Employee = module.parent.exports.Employee;
+//var Employee = module.parent.exports.Employee;
 
 
 ///* list users */
