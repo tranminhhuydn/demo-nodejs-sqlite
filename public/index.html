@@ -9,6 +9,7 @@
             window.angular.module('list', [])
                 .controller('listCtrl', function ($scope, $http) {
                     $http.get('/users').then(function (response) {
+                    	console.log(response)
                         $scope.users = response.data.data;
                     }, function (err) {
                         alert(err);

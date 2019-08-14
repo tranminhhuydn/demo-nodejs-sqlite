@@ -4,7 +4,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
+
 var sequelize = exports.sequelize = require('./conn.js');
+var Employee = require('./model/employees.js');
+
 var users = require('./routes/users');
 
 var app = express();
@@ -18,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
-var Employee = require('./model/employees.js');
+
 
 
 
