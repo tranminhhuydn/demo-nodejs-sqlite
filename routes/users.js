@@ -5,18 +5,7 @@ var result = require('../model/result');
 
 
 
-var Employee = require('../model/employees.js');
 
-
-
-/* list users */
-app.get('/', function(req, res) {
-    console.log('list users called');
-	  Employee.findAll().then(function(_employee){
-	    res.json(result.createResult(true, _employee));
-	  });
-
-});
 ///* list users */
 //router.get('/', function(req, res) {
 //    console.log('list users called');
