@@ -33,7 +33,15 @@ router.delete('/:id', function (req, res) {
     var id = req.params.id;
     console.log('delete Employee called, id=' + id);
     Employee.destroy({ idEmployee: id })
-    res.json(Result.createResult(true, null));
+    Employee.create({idEmployee: id }).then(function(task) {
+	  // now you see me...
+	  return task.destroy();
+	}).then(function() {
+	 // now i'm gone :)
+	 res.json(Result.createResult(true, null));
+	})
+	
+    
 //    Employee.deleteById(id, function (success) {
 //        res.json(Result.createResult(success, null));
 //    });
