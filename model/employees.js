@@ -15,11 +15,11 @@ var Employee = sequelize.define('Employees', {
 	timestamps: false
 });
 	
-app.get('/employees', function(req, res){
+router.get('/employees', function(req, res){
   Employee.findAll().then(function(result){
     //res.json(result);
     res.json(Result.createResult(true,result))
   });
 });
-
+module.exports = router;
 //module.exports = Employee;
