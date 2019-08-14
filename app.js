@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 
 var sequelize = exports.sequelize = require('./conn.js');
+var Result = require('./model/result');
 var Employee = require('./model/employees.js');
 
 var users = require('./routes/users');
@@ -23,7 +24,8 @@ app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
 app.get('/employees', function(req, res){
   Employee.findAll().then(function(result){
-    res.json(result);
+    //res.json(result);
+    res.json(Result.createResult(true,result))
   });
 });
 
