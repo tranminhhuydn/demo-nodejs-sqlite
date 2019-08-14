@@ -18,10 +18,25 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
-var sequelize = exports.sequelize = require('./conn.js');
 
 app.use('/users', users);
 
+var sequelize = exports.sequelize = require('./conn.js');
+var Employee = require('./model/employees.js');
+
+
+
+/* list users */
+app.get('/', function(req, res) {
+    console.log('list users called');
+//    userDAO.list(function (users) {
+//        res.json(result.createResult(true, users));
+//    });
+	  Employee.findAll().then(function(_employee){
+	    res.json(_employee);
+	  });
+
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

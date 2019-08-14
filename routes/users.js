@@ -4,21 +4,21 @@ var router = express.Router();
 var result = require('../model/result');
 
 
-var Employee = require('../model/employees.js');
-
-
-
-/* list users */
-router.get('/', function(req, res) {
-    console.log('list users called');
-//    userDAO.list(function (users) {
-//        res.json(result.createResult(true, users));
-//    });
-	  Employee.findAll().then(function(_employee){
-	    res.json(result.createResult(true, _employee));
-	  });
-
-});
+//var Employee = require('../model/employees.js');
+//
+//
+//
+///* list users */
+//router.get('/', function(req, res) {
+//    console.log('list users called');
+////    userDAO.list(function (users) {
+////        res.json(result.createResult(true, users));
+////    });
+//	  Employee.findAll().then(function(_employee){
+//	    res.json(result.createResult(true, _employee));
+//	  });
+//
+//});
 
 ///* get user */
 //router.get('/:id', function(req, res) {
