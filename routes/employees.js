@@ -32,10 +32,21 @@ router.get('/:id', function(req, res) {
 router.delete('/:id', function (req, res) {
     var id = req.params.id;
     console.log('delete Employee called, id=' + id);
-    Employee.deleteById(id, function (success) {
-        res.json(Result.createResult(success, null));
-    });
+    Employee.destroy({ idEmployee: id })
+    res.json(Result.createResult(true, null));
+//    Employee.deleteById(id, function (success) {
+//        res.json(Result.createResult(success, null));
+//    });
 });
 
+//User.create({ username: 'barfooz', isAdmin: true }, { fields: [ 'username' ] }).then(function(user) {
+//  // let's assume the default of isAdmin is false:
+//  console.log(user.get({
+//    plain: true
+//  })) // => { username: 'barfooz', isAdmin: false }
+//})
+//task.update({
+//  title: 'a very different title now'
+//}).then(function() {})
 module.exports = router;
 
