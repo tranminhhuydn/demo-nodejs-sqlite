@@ -32,7 +32,7 @@ router.get('/:id', function(req, res) {
 router.delete('/:id', function (req, res) {
     var id = req.params.id;
     console.log('delete Employee called, id=' + id);
-    Employee.destroy({ idEmployee: id })
+
     Employee.create({idEmployee: id }).then(function(task) {
 	  // now you see me...
 	  return task.destroy();
