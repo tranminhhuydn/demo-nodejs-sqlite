@@ -14,6 +14,7 @@ var Employee = sequelize.define('Employees', {
 }, {
 	timestamps: false
 });
+module.exports = Employee;
 	
 router.get('/employees', function(req, res){
   Employee.findAll().then(function(result){
@@ -22,4 +23,4 @@ router.get('/employees', function(req, res){
   });
 });
 module.exports = router;
-//module.exports = Employee;
+
