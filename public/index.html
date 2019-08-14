@@ -9,7 +9,6 @@
             window.angular.module('list', [])
                 .controller('listCtrl', function ($scope, $http) {
                     $http.get('/users').then(function (response) {
-                    	console.log(response)
                         $scope.users = response.data.data;
                     }, function (err) {
                         alert(err);
@@ -48,10 +47,10 @@
         <th>manage</th>
     </tr>
     <tr ng-repeat="user in users">
-        <td>{{user.idEmployee}}</td>
-        <td><a href="/detail.html?id={{user.idEmployee}}">{{user.first_name}}</a></td>
-        <td><input ng-value="user.email" id="pwd{{user.idEmployee}}" ng-blur="doPatch(user.idEmployee)"/></td>
-        <td><a href="/modify.html?id={{user.idEmployee}}">modify</a> <a href="javascript:void(0)" ng-click="doDel(user)">DEL</a>
+        <td>{{user.id}}</td>
+        <td><a href="/detail.html?id={{user.id}}">{{user.username}}</a></td>
+        <td><input ng-value="user.password" id="pwd{{user.id}}" ng-blur="doPatch(user.id)"/></td>
+        <td><a href="/modify.html?id={{user.id}}">modify</a> <a href="javascript:void(0)" ng-click="doDel(user)">DEL</a>
         </td>
     </tr>
 </table>
