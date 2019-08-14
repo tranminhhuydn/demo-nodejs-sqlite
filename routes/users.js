@@ -3,8 +3,8 @@ var router = express.Router();
 //var userDAO = require('../dao/userDAO');
 var result = require('../model/result');
 
-var sequelize = exports.sequelize = require('./conn.js');
-var Employee = require('./model/employees.js');
+
+var Employee = require('../model/employees.js');
 
 
 

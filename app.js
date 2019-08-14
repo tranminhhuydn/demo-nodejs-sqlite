@@ -18,6 +18,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
+var sequelize = exports.sequelize = require('./conn.js');
+
 app.use('/users', users);
 
 
