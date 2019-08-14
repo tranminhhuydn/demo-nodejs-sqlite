@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 
 var sequelize = exports.sequelize = require('./conn.js');
-var Employee = require('./model/employees.js');
+
 
 var users = require('./routes/users');
 
