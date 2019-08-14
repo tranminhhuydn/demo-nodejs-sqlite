@@ -32,14 +32,14 @@ router.get('/:id', function(req, res) {
 router.delete('/:id', function (req, res) {
     var id = req.params.id;
     console.log('delete Employee called, id=' + id);
-
-    Employee.create({idEmployee: id }).then(function(task) {
-	  // now you see me...
-	  return task.destroy();
-	}).then(function() {
-	 // now i'm gone :)
-	 res.json(Result.createResult(true, null));
+    //Employee.findByIdEmployee(id)
+    Employee.findOne({ where: {idEmployee: id} }).then(function(recode) {
+		recode.destroy();
+		res.json(Result.createResult(true, null));	 
 	})
+
+
+	
 	
     
 //    Employee.deleteById(id, function (success) {
