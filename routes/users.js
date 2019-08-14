@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 //var userDAO = require('../dao/userDAO');
-var result = require('../model/result');
+var Result = require('../model/result');
 
 var Employee = module.parent.exports.Employee;
 
@@ -10,11 +10,11 @@ var Employee = module.parent.exports.Employee;
 router.get('/', function(req, res) {
     console.log('list users called');
 //    userDAO.list(function (users) {
-//        res.json(result.createResult(true, users));
+//        res.json(Result.createResult(true, users));
 //    });
-	  Employee.findAll().then(function(_employee){
-	  	console.log('_employee',_employee);
-	    res.json(result.createResult(true, _employee));
+	  Employee.findAll().then(function(result){
+	  	console.log('_employee',result);
+	    res.json(Result.createResult(true, result));
 	  });
 
 });
@@ -42,10 +42,10 @@ router.post('/', function (req, res) {
     console.log('post users called');
     var user = req.body;
     console.log(user);
-    var r =  result.createResult('success', null);
+    var r =  Result.createResult('success', null);
     res.json(r);
 //    userDAO.add(user, function (success) {
-//        var r =  result.createResult(success, null);
+//        var r =  Result.createResult(success, null);
 //        res.json(r);
 //    });
 });
@@ -57,7 +57,7 @@ router.post('/', function (req, res) {
 //    user.id = req.params.id;
 //    console.log(user);
 //    userDAO.update(user, function (success) {
-//        var r =  result.createResult(success, null);
+//        var r =  Result.createResult(success, null);
 //        res.json(r);
 //    });
 //});
@@ -76,7 +76,7 @@ router.post('/', function (req, res) {
 //        }
 //        console.log(user);
 //        userDAO.update(user, function (success) {
-//            var r =  result.createResult(success, null);
+//            var r =  Result.createResult(success, null);
 //            res.json(r);
 //        });
 //    });
