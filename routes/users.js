@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
 //        res.json(result.createResult(true, users));
 //    });
 	  Employee.findAll().then(function(_employee){
+	  	console.log('_employee',_employee);
 	    res.json(result.createResult(true, _employee));
 	  });
 
