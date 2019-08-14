@@ -14,7 +14,7 @@
                         alert(err);
                     });
                     $scope.doDel = function (user) {
-                        $http.delete("/users/" + user.idEmployee)
+                        $http.delete("/employees/" + user.idEmployee)
                             .then(function () {
                                 $scope.users.splice($scope.users.indexOf(user), 1);
                             }, function (err) {
@@ -25,7 +25,7 @@
                         var data = JSON.stringify({
                             password: document.getElementById("pwd" + id).value
                         });
-                        $http.patch("/users/" + id, data)
+                        $http.patch("/employees/" + id, data)
                             .then(function (response) {
                             }, function (err) {
                                 alert(err);
