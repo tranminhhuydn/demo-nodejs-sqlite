@@ -12,11 +12,13 @@ router.get('/', function(req, res) {
 //    userDAO.list(function (users) {
 //        res.json(Result.createResult(true, users));
 //    });
-	  Employee.findAll().then(function(result){
-	  	console.log('_employee',result);
-	    res.json(Result.createResult(true, result));
-	  });
-
+//	  Employee.findAll().then(function(result){
+//	  	console.log('_employee',result);
+//	    res.json(Result.createResult(true, result));
+//	  });
+	console.log('Employee',Employee)
+	  users = [{ id: 3, username: 'phaikhong@gmail.com', password: '11111' },{ id: 4, username: 'choidi@gmail.com', password: '2222' }, password: '123456-' }, { id: 5, username: 'huetinh04@yahoo.com', password: '12341234' } ]
+		res.json(Result.createResult(true,users))
 });
 
 ///* get user */
