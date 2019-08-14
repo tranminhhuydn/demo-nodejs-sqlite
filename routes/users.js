@@ -38,15 +38,17 @@ router.get('/', function(req, res) {
 //});
 //
 ///* add users */
-//router.post('/', function (req, res) {
-//    console.log('post users called');
-//    var user = req.body;
-//    console.log(user);
+router.post('/', function (req, res) {
+    console.log('post users called');
+    var user = req.body;
+    console.log(user);
+    var r =  result.createResult('success', null);
+    res.json(r);
 //    userDAO.add(user, function (success) {
 //        var r =  result.createResult(success, null);
 //        res.json(r);
 //    });
-//});
+});
 //
 ///* update users */
 //router.put('/:id', function (req, res) {
