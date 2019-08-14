@@ -2,8 +2,9 @@ var Sequelize = require('sequelize');
 var sequelize = module.parent.exports.sequelize;
 
 var express = require('express');
+var Result = require('../model/result');
 var router = express.Router();
-var Result = require('result');
+
 
 var Employee = sequelize.define('Employees', {
 	idEmployee      : { type : Sequelize.INTEGER, primaryKey : true, autoIncrement : true },
