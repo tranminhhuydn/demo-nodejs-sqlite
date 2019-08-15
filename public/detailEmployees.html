@@ -13,7 +13,7 @@
                 .controller('detailCtrl', function ($scope, $http, $location) {
                     var id = $location.search().id;
                     $http.get('/employees/' + id).then(function (response) {
-                      g  $scope.user = response.data.data;
+                        $scope.user = response.data.data;
                     }, function (err) {
                         alert(err);
                     });

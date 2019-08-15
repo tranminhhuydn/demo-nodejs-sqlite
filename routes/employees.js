@@ -64,9 +64,10 @@ router.post('/', function (req, res) {
 		//console.log(sequelize);
 	Employee.create(employee).then(function(success) {
 
-		 var r =  Result.createResult(success, null);
+		 var r =  Result.createResult(sequelize, null);
 		 res.json(r);
 	})
+	//connectionManager
 	console.log(sequelize.dialect);
 
 });
