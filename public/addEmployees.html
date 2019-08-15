@@ -5,6 +5,7 @@
     <title>add</title>
     <script src="/angular/angular.min.js"></script>
     <script>
+    var test
         (function (window) {
             window.angular.module('add', [])
                 .controller('addCtrl', function ($scope, $http) {
@@ -18,7 +19,7 @@
                         $http.post("/employees", data)
                             .then(function (res) {
                                 if(res.data.success) {
-                                  console.log(res.data.success);
+                                  test = res.data.success
                                     $scope.msg = '添加成功';
                                 } else {
                                     $scope.msg = '添加失败';
