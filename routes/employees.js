@@ -55,7 +55,7 @@ router.delete('/:id', function (req, res) {
 			recode.destroy();
 			res.json(Result.createResult(true, null));
 		})
-		Employee.save().then(function() {})
+		.save().then(function() {})
 });
 router.post('/', function (req, res) {
     console.log('post users called');
@@ -67,7 +67,7 @@ router.post('/', function (req, res) {
 		 var r =  Result.createResult(success, null);
 		 res.json(r);
 	})
-	Employee.save().then(function() {})
+	.save().then(function() {})
 });
 
 //task.update({
