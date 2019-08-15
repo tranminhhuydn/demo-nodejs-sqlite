@@ -37,22 +37,18 @@ router.delete('/:id', function (req, res) {
 		recode.destroy();
 		res.json(Result.createResult(true, null));	 
 	})
+});
+router.post('/', function (req, res) {
+    console.log('post users called');
+    var employee = req.body;
+    console.log(employee);
 
-
-	
-	
-    
-//    Employee.deleteById(id, function (success) {
-//        res.json(Result.createResult(success, null));
-//    });
+	Employee.create(employee).then(function(success) {
+		 var r =  Result.createResult(success, null);
+		 res.json(r);
+	})
 });
 
-//User.create({ username: 'barfooz', isAdmin: true }, { fields: [ 'username' ] }).then(function(user) {
-//  // let's assume the default of isAdmin is false:
-//  console.log(user.get({
-//    plain: true
-//  })) // => { username: 'barfooz', isAdmin: false }
-//})
 //task.update({
 //  title: 'a very different title now'
 //}).then(function() {})
