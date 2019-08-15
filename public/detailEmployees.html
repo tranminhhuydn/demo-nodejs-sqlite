@@ -12,8 +12,8 @@
                 })
                 .controller('detailCtrl', function ($scope, $http, $location) {
                     var id = $location.search().id;
-                    $http.get('/users/' + id).then(function (response) {
-                        $scope.user = response.data.data;
+                    $http.get('/employees/' + id).then(function (response) {
+                      g  $scope.user = response.data.data;
                     }, function (err) {
                         alert(err);
                     });
