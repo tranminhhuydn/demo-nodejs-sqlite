@@ -49,10 +49,10 @@
     </tr>
     <tr ng-repeat="user in users">
         <td>{{user.idEmployee}}</td>
-        <td><a href="/detail.html?id={{user.idEmployee}}">{{user.first_name}}</a></td>
+        <td><a href="/detailEmployees.html?id={{user.idEmployee}}">{{user.first_name}}</a></td>
         <td>{{user.last_name}}</td>
         <td><input ng-value="user.email" id="pwd{{user.idEmployee}}" ng-blur="doPatch(user.idEmployee)"/></td>
-        <td><a href="/modify.html?id={{user.idEmployee}}">modify</a> <a href="javascript:void(0)" ng-click="doDel(user)">DEL</a>
+        <td><a href="/modifyEmployees.html?id={{user.idEmployee}}">modify</a> <a href="javascript:void(0)" ng-click="doDel(user)">DEL</a>
         </td>
     </tr>
 </table>
