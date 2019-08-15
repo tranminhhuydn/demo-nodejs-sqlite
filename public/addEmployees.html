@@ -15,7 +15,7 @@
                             email: $scope.email,
                             hashed_password: $scope.hashed_password
                         });
-                        $http.post("/users", data)
+                        $http.post("/employees", data)
                             .then(function (res) {
                                 if(res.data.success) {
                                     $scope.msg = '添加成功';
@@ -32,7 +32,7 @@
 </head>
 <body ng-controller="addCtrl">
 <div align="center">
-    <a href="/index.html">home</a>
+    <a href="/employees.html">home</a>
 </div>
 <table align="center" border="1">
     <tr>
