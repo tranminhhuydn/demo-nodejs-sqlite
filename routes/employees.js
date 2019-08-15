@@ -67,7 +67,7 @@ router.post('/', function (req, res) {
 		 var r =  Result.createResult(success, null);
 		 res.json(r);
 	})
-	console.log(sequelize.dialect.export());
+	console.log(sequelize.dialect);
 
 });
 
