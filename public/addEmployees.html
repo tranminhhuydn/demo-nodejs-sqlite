@@ -18,8 +18,8 @@
                         });
                         $http.post("/employees", data)
                             .then(function (res) {
+                              test = res
                                 if(res.data.success) {
-                                  test = res.data.success
                                     $scope.msg = '添加成功';
                                 } else {
                                     $scope.msg = '添加失败';
