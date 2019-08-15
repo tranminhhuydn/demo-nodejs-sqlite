@@ -50,21 +50,24 @@ router.delete('/:id', function (req, res) {
     var id = req.params.id;
     console.log('delete Employee called, id=' + id);
     //Employee.findByIdEmployee(id)
-    Employee.findOne({ where: {idEmployee: id} }).then(function(recode) {
-		recode.destroy();
-		res.json(Result.createResult(true, null));
-	})
+    Employee.findOne({ where: {idEmployee: id} })
+		.then(function(recode) {
+			recode.destroy();
+			res.json(Result.createResult(true, null));
+		})
+		Employee.save().then(function() {})
 });
 router.post('/', function (req, res) {
     console.log('post users called');
     var employee = req.body;
     //console.log(employee);
-		console.log(sequelize);
+		//console.log(sequelize);
 	Employee.create(employee).then(function(success) {
 
 		 var r =  Result.createResult(success, null);
 		 res.json(r);
 	})
+	Employee.save().then(function() {})
 });
 
 //task.update({
