@@ -2,7 +2,7 @@
 <html ng-app="list">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>employees</title>
     <script src="/angular/angular.min.js"></script>
     <script>
         (function (window) {
@@ -42,13 +42,15 @@
 <table align="center" border="1" ng-controller="listCtrl">
     <tr>
         <th>ID</th>
-        <th>username</th>
-        <th>password</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
         <th>manage</th>
     </tr>
     <tr ng-repeat="user in users">
         <td>{{user.idEmployee}}</td>
         <td><a href="/detail.html?id={{user.idEmployee}}">{{user.first_name}}</a></td>
+        <td>{{user.last_name}}</td>
         <td><input ng-value="user.email" id="pwd{{user.idEmployee}}" ng-blur="doPatch(user.idEmployee)"/></td>
         <td><a href="/modify.html?id={{user.idEmployee}}">modify</a> <a href="javascript:void(0)" ng-click="doDel(user)">DEL</a>
         </td>
