@@ -39,6 +39,15 @@ router.get('/', function(req, res){
     res.json(Result.createResult(true,result))
   });
 });
+router.get('/createdb', function(req, res){
+	var nameDB = 'db/database1.sqlite'
+	var wstream = fs.createWriteStream(nameDB);
+
+	var readStream = fs.readFileSync('db/database.sqlite');
+	fs.writeFileSync(nameDB, readStream);
+
+    res.json(Result.createResult(true,'result'))
+});
 router.get('/:id', function(req, res) {
     var id = req.params.id;
     console.log('get Employee called, id: ' + id);

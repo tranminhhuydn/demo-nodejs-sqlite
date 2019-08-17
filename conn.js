@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 
 var sequelize = new Sequelize('database', '', '',
-      { storage: 'db/database.sqlite', dialect: 'sqlite'});
+      {storage: 'db/database1.sqlite', dialect: 'sqlite'});
 
 sequelize
   .authenticate()
