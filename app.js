@@ -23,8 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
 
-
-
 //app.use(Employee);
 app.use('/employees', Employee);
 app.use('/test', test);
