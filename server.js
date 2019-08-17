@@ -13,6 +13,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+var server = require("http").createServer(app)
+server.listen(8888)
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(logger('dev'));
@@ -29,6 +31,7 @@ app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 app.use('/employees', Employee);
 app.use('/test', test);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

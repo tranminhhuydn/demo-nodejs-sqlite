@@ -68,7 +68,7 @@ router.post('/', function (req, res) {
 		 res.json(r);
 	})
 	//connectionManager
-	console.log(sequelize.dialect);
+	console.log(sequelize.connectionManager);
 
 });
 
